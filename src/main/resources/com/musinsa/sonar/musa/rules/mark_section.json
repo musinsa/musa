@@ -1,0 +1,7 @@
+{
+  "key": "mark_section",
+  "name": "MARK Section",
+  "description": "Swift files must use MARK comments to divide code into logical sections following the Musinsa section ordering convention.",
+  "severity": "MAJOR",
+  "tags": ["musinsa", "convention"]
+}

@@ -1,0 +1,7 @@
+{
+  "key": "no_force_unwrap_iboutlet",
+  "name": "No Force Unwrap IBOutlet",
+  "description": "IBOutlet properties should not be force unwrapped. Use optional chaining or optional binding instead of force unwrapping (@IBOutlet properties).",
+  "severity": "CRITICAL",
+  "tags": ["musinsa", "convention", "iboutlet"]
+}

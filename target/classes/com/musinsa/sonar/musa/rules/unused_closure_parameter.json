@@ -1,0 +1,7 @@
+{
+  "key": "unused_closure_parameter",
+  "name": "Unused Closure Parameter",
+  "description": "Closure parameters should be used. Remove unused parameters or replace them with an underscore (_) if not needed.",
+  "severity": "MINOR",
+  "tags": ["swiftlint"]
+}

@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"mvn clean test\"}",
+  "error": "Exit code 1\n[INFO] Scanning for projects...\n[INFO] \n[INFO] -------------------< com.musinsa:sonar-musa-plugin >--------------------\n[INFO] Building MuSA - Mucinsa Swift Analyzer 1.0.0\n[INFO]   from pom.xml\n[INFO] ----------------------------[ sonar-plugin ]----------------------------\n[WARNING] Ignoring incompatible plugin version 4.0.0-beta-1: \nThe plugin org.apache.maven.plugins:maven-resources-plugin:4.0.0-beta-1 has unmet prerequisites: \n\tRequired Maven version 4.0.0-beta-3 is not met by cur...",
+  "timestamp": "2026-04-29T16:13:08.401Z",
+  "retry_count": 1
+}

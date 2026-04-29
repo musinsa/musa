@@ -1,0 +1,7 @@
+{
+  "key": "file_length",
+  "name": "File Length",
+  "description": "Files should not span too many lines. Long files are a signal that a type is doing too many things and should be broken up.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

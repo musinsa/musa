@@ -1,0 +1,7 @@
+{
+  "key": "reactor_action_naming",
+  "name": "Reactor Action Naming",
+  "description": "Reactor action methods should follow a consistent naming convention. Actions should be named as verbs (e.g., didTapButton, onItemSelected).",
+  "severity": "MAJOR",
+  "tags": ["musinsa", "convention", "reactor", "naming"]
+}

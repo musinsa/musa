@@ -1,0 +1,7 @@
+{
+  "key": "reactor_import_order",
+  "name": "Reactor Import Order",
+  "description": "RxSwift/ReactorKit imports must follow the Musinsa import ordering convention: Foundation/UIKit first, then third-party reactive frameworks.",
+  "severity": "MAJOR",
+  "tags": ["musinsa", "convention"]
+}

@@ -1,0 +1,7 @@
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/rules/MusaConventionRules.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/MuSAPlugin.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/rules/SwiftQualityProfile.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/languages/SwiftLanguage.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/sensors/SwiftLintSensor.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/rules/SwiftRulesDefinition.java
+/Users/musinsa/www/musa/src/main/java/com/musinsa/sonar/musa/sensors/XccovCoverageSensor.java

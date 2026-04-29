@@ -1,0 +1,7 @@
+{
+  "key": "force_try",
+  "name": "Force Try",
+  "description": "Force tries should be avoided. Use do-catch and handle errors explicitly instead of force try (try!).",
+  "severity": "CRITICAL",
+  "tags": ["swiftlint"]
+}

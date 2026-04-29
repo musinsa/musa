@@ -1,0 +1,7 @@
+{
+  "key": "line_length",
+  "name": "Line Length",
+  "description": "Lines should not span too many characters. Long lines reduce readability and often indicate that logic should be refactored.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

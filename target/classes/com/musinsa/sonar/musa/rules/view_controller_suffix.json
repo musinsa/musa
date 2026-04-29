@@ -1,0 +1,7 @@
+{
+  "key": "view_controller_suffix",
+  "name": "ViewController Suffix",
+  "description": "Classes that subclass UIViewController must have a 'ViewController' suffix in their name, following the Musinsa naming convention.",
+  "severity": "MAJOR",
+  "tags": ["musinsa", "convention"]
+}

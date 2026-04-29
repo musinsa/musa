@@ -1,0 +1,7 @@
+{
+  "key": "void_return",
+  "name": "Void Return",
+  "description": "Functions that return Void should omit the return type. Functions with no meaningful return value should not explicitly declare -> Void.",
+  "severity": "MINOR",
+  "tags": ["swiftlint"]
+}

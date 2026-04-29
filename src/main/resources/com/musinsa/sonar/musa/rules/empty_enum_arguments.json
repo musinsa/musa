@@ -1,0 +1,7 @@
+{
+  "key": "empty_enum_arguments",
+  "name": "Empty Enum Arguments",
+  "description": "Enum cases should not have empty argument lists. Remove empty parentheses from enum cases that do not have associated values.",
+  "severity": "MINOR",
+  "tags": ["swiftlint"]
+}

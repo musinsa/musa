@@ -1,0 +1,7 @@
+{
+  "key": "type_body_length",
+  "name": "Type Body Length",
+  "description": "Type bodies should not span too many lines. Large types are a signal they should be decomposed into smaller, more focused types.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

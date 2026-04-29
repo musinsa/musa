@@ -1,0 +1,7 @@
+{
+  "key": "nesting",
+  "name": "Nesting",
+  "description": "Types and statements should be nested to the maximum allowed depth. Deeply nested types and control flow are harder to read and maintain.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

@@ -1,0 +1,7 @@
+{
+  "key": "trailing_whitespace",
+  "name": "Trailing Whitespace",
+  "description": "Lines should not have trailing whitespace. Remove any trailing spaces or tabs at the end of lines.",
+  "severity": "MINOR",
+  "tags": ["swiftlint"]
+}

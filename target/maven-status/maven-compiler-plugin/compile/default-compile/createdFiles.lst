@@ -1,0 +1,7 @@
+com/musinsa/sonar/musa/sensors/XccovCoverageSensor.class
+com/musinsa/sonar/musa/rules/SwiftRulesDefinition.class
+com/musinsa/sonar/musa/MuSAPlugin.class
+com/musinsa/sonar/musa/languages/SwiftLanguage.class
+com/musinsa/sonar/musa/rules/MusaConventionRules.class
+com/musinsa/sonar/musa/sensors/SwiftLintSensor.class
+com/musinsa/sonar/musa/rules/SwiftQualityProfile.class

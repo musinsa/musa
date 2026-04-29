@@ -1,0 +1,7 @@
+{
+  "key": "function_body_length",
+  "name": "Function Body Length",
+  "description": "Functions bodies should not span too many lines. Extract helper methods to keep function bodies concise and readable.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

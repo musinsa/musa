@@ -1,0 +1,7 @@
+{
+  "key": "cyclomatic_complexity",
+  "name": "Cyclomatic Complexity",
+  "description": "Complexity of function bodies should be limited. Functions with high cyclomatic complexity are harder to understand and test.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

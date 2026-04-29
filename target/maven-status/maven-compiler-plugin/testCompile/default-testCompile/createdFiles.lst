@@ -1,0 +1,5 @@
+com/musinsa/sonar/musa/languages/SwiftLanguageTest.class
+com/musinsa/sonar/musa/rules/SwiftRulesDefinitionTest.class
+com/musinsa/sonar/musa/sensors/XccovCoverageSensorTest.class
+com/musinsa/sonar/musa/sensors/SwiftLintSensorTest.class
+com/musinsa/sonar/musa/rules/MusaConventionRulesTest.class

@@ -1,0 +1,7 @@
+{
+  "key": "force_cast",
+  "name": "Force Cast",
+  "description": "Force casts should be avoided. Use conditional casts (as?) and handle the nil case instead.",
+  "severity": "CRITICAL",
+  "tags": ["swiftlint"]
+}
