@@ -26,6 +26,14 @@ public class SwiftLintSensor implements Sensor {
     private static final String REPORT_PATH_KEY = "sonar.swift.swiftlint.reportPath";
     private static final String DEFAULT_REPORT_PATH = "swiftlint.json";
 
+    private static final Set<String> SWIFTLINT_RULES = Set.of(
+        "force_cast", "force_try", "weak_delegate",
+        "cyclomatic_complexity", "file_length", "function_body_length",
+        "line_length", "nesting", "type_body_length",
+        "trailing_whitespace", "empty_enum_arguments",
+        "unused_closure_parameter", "void_return"
+    );
+
     private static final Set<String> MUSA_CONVENTION_RULES = Set.of(
         "reactor_import_order",
         "view_controller_suffix",
@@ -86,9 +94,15 @@ public class SwiftLintSensor implements Sensor {
             return false;
         }
 
-        String repoKey = MUSA_CONVENTION_RULES.contains(ruleId)
-            ? MusaConventionRules.REPOSITORY_KEY
-            : SwiftRulesDefinition.REPOSITORY_KEY;
+        String repoKey;
+        if (MUSA_CONVENTION_RULES.contains(ruleId)) {
+            repoKey = MusaConventionRules.REPOSITORY_KEY;
+        } else if (SWIFTLINT_RULES.contains(ruleId)) {
+            repoKey = SwiftRulesDefinition.REPOSITORY_KEY;
+        } else {
+            LOG.debug("Unknown rule '{}', skipping issue at {}:{}", ruleId, filePath, line);
+            return false;
+        }
 
         RuleKey ruleKey = RuleKey.of(repoKey, ruleId);
         FileSystem fs = context.fileSystem();

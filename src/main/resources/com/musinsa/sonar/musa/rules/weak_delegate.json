@@ -1,0 +1,7 @@
+{
+  "key": "weak_delegate",
+  "name": "Weak Delegate",
+  "description": "Delegates should be weak to avoid retain cycles. Use <code>weak var delegate</code> instead of a strong reference.",
+  "severity": "MAJOR",
+  "tags": ["swiftlint"]
+}

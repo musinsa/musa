@@ -12,7 +12,7 @@ class SwiftRulesDefinitionTest {
 
         RulesDefinition.Repository repo = context.repository("swiftlint");
         assertNotNull(repo);
-        assertEquals(12, repo.rules().size());
+        assertEquals(13, repo.rules().size());
     }
 
     @Test

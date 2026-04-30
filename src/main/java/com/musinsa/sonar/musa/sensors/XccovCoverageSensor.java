@@ -42,8 +42,12 @@ public class XccovCoverageSensor implements Sensor {
         }
 
         try {
-            Document doc = DocumentBuilderFactory.newInstance()
-                .newDocumentBuilder()
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            dbf.setFeature("http://xml.org/sax/features/external-general-entities", false);
+            dbf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+            dbf.setExpandEntityReferences(false);
+            Document doc = dbf.newDocumentBuilder()
                 .parse(reportFile);
             doc.getDocumentElement().normalize();
 

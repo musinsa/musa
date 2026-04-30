@@ -10,7 +10,7 @@
     <version>1.0.0</version>
     <packaging>sonar-plugin</packaging>
 
-    <name>MuSA - Mucinsa Swift Analyzer</name>
+    <name>MuSA - Musinsa Swift Analyzer</name>
     <description>SonarQube plugin for Swift static analysis</description>
     <url>https://github.com/musinsa/sonar-musa-plugin</url>
 
@@ -38,12 +38,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>

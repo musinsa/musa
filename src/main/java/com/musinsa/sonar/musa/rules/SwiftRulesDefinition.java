@@ -2,17 +2,22 @@ package com.musinsa.sonar.musa.rules;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.sonar.api.rules.RuleType;
 import org.sonar.api.server.rule.RulesDefinition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SwiftRulesDefinition implements RulesDefinition {
+
+    private static final Logger LOG = LoggerFactory.getLogger(SwiftRulesDefinition.class);
 
     public static final String REPOSITORY_KEY = "swiftlint";
     public static final String REPOSITORY_NAME = "SwiftLint";
     public static final String LANGUAGE_KEY = "swift";
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     @Override
     public void define(Context context) {
@@ -21,6 +26,7 @@ public class SwiftRulesDefinition implements RulesDefinition {
 
         defineRuleFromResource(repository, "force_cast", RuleType.BUG);
         defineRuleFromResource(repository, "force_try", RuleType.BUG);
+        defineRuleFromResource(repository, "weak_delegate", RuleType.BUG);
         defineRuleFromResource(repository, "cyclomatic_complexity", RuleType.CODE_SMELL);
         defineRuleFromResource(repository, "file_length", RuleType.CODE_SMELL);
         defineRuleFromResource(repository, "function_body_length", RuleType.CODE_SMELL);
@@ -36,13 +42,14 @@ public class SwiftRulesDefinition implements RulesDefinition {
     }
 
     private void defineRuleFromResource(NewRepository repository, String key, RuleType type) {
-        JsonObject ruleMetadata = loadRuleMetadata(key);
+        JsonNode ruleMetadata = loadRuleMetadata(key);
         if (ruleMetadata == null) {
+            LOG.warn("Rule metadata not found for key: {}", key);
             return;
         }
-        String name = ruleMetadata.has("name") ? ruleMetadata.get("name").getAsString() : key;
-        String description = ruleMetadata.has("description") ? ruleMetadata.get("description").getAsString() : "";
-        String severity = ruleMetadata.has("severity") ? ruleMetadata.get("severity").getAsString() : "MAJOR";
+        String name = ruleMetadata.path("name").asText(key);
+        String description = ruleMetadata.path("description").asText("");
+        String severity = ruleMetadata.path("severity").asText("MAJOR");
 
         repository.createRule(key)
             .setName(name)
@@ -52,15 +59,15 @@ public class SwiftRulesDefinition implements RulesDefinition {
             .addTags("swiftlint", "swift");
     }
 
-    private JsonObject loadRuleMetadata(String ruleKey) {
+    private JsonNode loadRuleMetadata(String ruleKey) {
         String resourcePath = "/com/musinsa/sonar/musa/rules/" + ruleKey + ".json";
         try (InputStream is = getClass().getResourceAsStream(resourcePath)) {
             if (is == null) {
                 return null;
             }
-            String json = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-            return new Gson().fromJson(json, JsonObject.class);
+            return MAPPER.readTree(is);
         } catch (IOException e) {
+            LOG.error("Failed to load rule metadata for {}: {}", ruleKey, e.getMessage());
             return null;
         }
     }
