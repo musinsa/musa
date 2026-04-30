@@ -223,7 +223,7 @@
 | 기간 | 마일스톤 | 산출물 |
 |------|---------|--------|
 | W1 (2026-04-27 ~ 05-01) | Plugin 골격 + 핵심 Sensor 구현 | Plugin/Language/RulesDefinition, SwiftLintSensor, 무신사 컨벤션 룰, xccov import |
-| W2 (2026-05-04 ~ 05-08) | 통합 검증 + LLM 코멘트 + 1차 시연 | 양 팀 샘플 레포 분석 성공, LLM 데코레이터, PR Decoration 동작 확인 |
+| W2 (2026-05-04 ~ 05-08) | 통합 검증 + LLM 코멘트 + SonarQube 설치 검증 + iOS 개발자 검수 | 양 팀 샘플 레포 분석 성공, LLM 데코레이터, PR Decoration 동작 확인, sonarqube(-mobile) 환경에 jar 배포 및 동작 검증, iOS 개발자 검수 피드백 수렴 |
 | W3 (2026-05-11 ~ 05-15) | 검증·튜닝·보고 | 성능/안정성 검증, 판단 기준 비교(DE 대비), PoC 결과 보고 (5/15) |
 
 > 공휴일: 5/1(금) 근로자의 날, 5/5(화) 어린이날
