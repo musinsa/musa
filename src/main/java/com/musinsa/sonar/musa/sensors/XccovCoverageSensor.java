@@ -71,10 +71,13 @@ public class XccovCoverageSensor implements Sensor {
 
                 for (int j = 0; j < lines.getLength(); j++) {
                     Element lineEl = (Element) lines.item(j);
-                    int lineNumber = Integer.parseInt(lineEl.getAttribute("lineNumber"));
-                    boolean covered = Boolean.parseBoolean(lineEl.getAttribute("covered"));
-                    int hits = covered ? 1 : 0;
-                    coverage.lineHits(lineNumber, hits);
+                    try {
+                        int lineNumber = Integer.parseInt(lineEl.getAttribute("lineNumber"));
+                        boolean covered = Boolean.parseBoolean(lineEl.getAttribute("covered"));
+                        coverage.lineHits(lineNumber, covered ? 1 : 0);
+                    } catch (NumberFormatException e) {
+                        LOG.warn("Invalid lineNumber at index {} in {}: {}", j, filePath, lineEl.getAttribute("lineNumber"));
+                    }
                 }
 
                 coverage.save();
