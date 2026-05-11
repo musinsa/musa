@@ -2,6 +2,7 @@ package com.musinsa.sonar.musa.rules;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Set;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.sonar.api.rules.RuleType;
@@ -16,6 +17,11 @@ public class MusaConventionRules implements RulesDefinition {
     public static final String REPOSITORY_KEY = "musa-convention";
     public static final String REPOSITORY_NAME = "Musinsa Convention";
     public static final String LANGUAGE_KEY = "swift";
+
+    public static final Set<String> RULE_KEYS = Set.of(
+        "reactor_import_order", "view_controller_suffix", "mark_section",
+        "reactor_action_naming", "no_force_unwrap_iboutlet"
+    );
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 

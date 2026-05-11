@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Set;
 
 public class SwiftLintSensor implements Sensor {
 
@@ -26,21 +25,6 @@ public class SwiftLintSensor implements Sensor {
     private static final String REPORT_PATH_KEY = "sonar.swift.swiftlint.reportPath";
     private static final String DEFAULT_REPORT_PATH = "swiftlint.json";
 
-    private static final Set<String> SWIFTLINT_RULES = Set.of(
-        "force_cast", "force_try", "weak_delegate",
-        "cyclomatic_complexity", "file_length", "function_body_length",
-        "line_length", "nesting", "type_body_length",
-        "trailing_whitespace", "empty_enum_arguments",
-        "unused_closure_parameter", "void_return"
-    );
-
-    private static final Set<String> MUSA_CONVENTION_RULES = Set.of(
-        "reactor_import_order",
-        "view_controller_suffix",
-        "mark_section",
-        "reactor_action_naming",
-        "no_force_unwrap_iboutlet"
-    );
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -95,12 +79,12 @@ public class SwiftLintSensor implements Sensor {
         }
 
         String repoKey;
-        if (MUSA_CONVENTION_RULES.contains(ruleId)) {
+        if (MusaConventionRules.RULE_KEYS.contains(ruleId)) {
             repoKey = MusaConventionRules.REPOSITORY_KEY;
-        } else if (SWIFTLINT_RULES.contains(ruleId)) {
+        } else if (SwiftRulesDefinition.RULE_KEYS.contains(ruleId)) {
             repoKey = SwiftRulesDefinition.REPOSITORY_KEY;
         } else {
-            LOG.debug("Unknown rule '{}', skipping issue at {}:{}", ruleId, filePath, line);
+            LOG.warn("Unmapped SwiftLint rule '{}', skipping issue at {}:{}", ruleId, filePath, line);
             return false;
         }
 

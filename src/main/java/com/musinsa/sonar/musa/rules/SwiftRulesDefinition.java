@@ -2,6 +2,7 @@ package com.musinsa.sonar.musa.rules;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Set;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.sonar.api.rules.RuleType;
@@ -16,6 +17,14 @@ public class SwiftRulesDefinition implements RulesDefinition {
     public static final String REPOSITORY_KEY = "swiftlint";
     public static final String REPOSITORY_NAME = "SwiftLint";
     public static final String LANGUAGE_KEY = "swift";
+
+    public static final Set<String> RULE_KEYS = Set.of(
+        "force_cast", "force_try", "weak_delegate",
+        "cyclomatic_complexity", "file_length", "function_body_length",
+        "line_length", "nesting", "type_body_length",
+        "trailing_whitespace", "empty_enum_arguments",
+        "unused_closure_parameter", "void_return"
+    );
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
