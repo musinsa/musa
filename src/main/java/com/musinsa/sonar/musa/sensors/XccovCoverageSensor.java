@@ -62,6 +62,11 @@ public class XccovCoverageSensor implements Sensor {
                 InputFile inputFile = fs.inputFile(fs.predicates().hasAbsolutePath(filePath));
 
                 if (inputFile == null) {
+                    String relativePath = filePath.replaceFirst("^/work/", "");
+                    inputFile = fs.inputFile(fs.predicates().hasRelativePath(relativePath));
+                }
+
+                if (inputFile == null) {
                     LOG.debug("File not indexed, skipping coverage: {}", filePath);
                     continue;
                 }
