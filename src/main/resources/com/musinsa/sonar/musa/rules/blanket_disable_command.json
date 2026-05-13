@@ -1,0 +1,5 @@
+{
+  "name": "Blanket Disable Command",
+  "description": "<p>SwiftLint disable commands should specify at least one rule to disable.</p>",
+  "severity": "MINOR"
+}

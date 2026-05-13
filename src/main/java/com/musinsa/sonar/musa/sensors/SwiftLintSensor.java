@@ -93,6 +93,15 @@ public class SwiftLintSensor implements Sensor {
         InputFile inputFile = fs.inputFile(fs.predicates().hasAbsolutePath(filePath));
 
         if (inputFile == null) {
+            // Docker 컨테이너 경로(/work/...)와 runner 경로가 다를 수 있으므로
+            // baseDir 기준 상대 경로로 재시도
+            String baseDir = fs.baseDir().getAbsolutePath();
+            // /work 또는 기타 컨테이너 prefix를 제거하고 상대 경로 추출
+            String relativePath = filePath.replaceFirst("^/work/", "");
+            inputFile = fs.inputFile(fs.predicates().hasRelativePath(relativePath));
+        }
+
+        if (inputFile == null) {
             LOG.debug("File not indexed, skipping issue: {}", filePath);
             return false;
         }

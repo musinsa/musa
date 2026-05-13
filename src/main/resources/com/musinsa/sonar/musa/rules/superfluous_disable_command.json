@@ -1,0 +1,5 @@
+{
+  "name": "Superfluous Disable Command",
+  "description": "<p>Disable comment is not needed as the rule is not violated.</p>",
+  "severity": "MINOR"
+}

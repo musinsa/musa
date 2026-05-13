@@ -1,0 +1,5 @@
+{
+  "name": "Unneeded Synthesized Initializer",
+  "description": "<p>Default initializer provided by Swift should not be explicitly declared.</p>",
+  "severity": "MINOR"
+}

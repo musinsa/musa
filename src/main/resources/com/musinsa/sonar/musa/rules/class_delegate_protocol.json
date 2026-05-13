@@ -1,0 +1,5 @@
+{
+  "name": "Class Delegate Protocol",
+  "description": "<p>Delegate protocols should be class-only so they can be weakly referenced.</p>",
+  "severity": "MINOR"
+}

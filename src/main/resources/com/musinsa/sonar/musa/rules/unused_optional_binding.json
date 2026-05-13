@@ -1,0 +1,5 @@
+{
+  "name": "Unused Optional Binding",
+  "description": "<p>Prefer != nil over if let _ = to check for optional existence.</p>",
+  "severity": "MINOR"
+}

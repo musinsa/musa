@@ -1,0 +1,5 @@
+{
+  "name": "Redundant Void Return",
+  "description": "<p>Returning Void in a function declaration is redundant.</p>",
+  "severity": "MINOR"
+}

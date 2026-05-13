@@ -1,0 +1,5 @@
+{
+  "name": "Orphaned Doc Comment",
+  "description": "<p>A documentation comment is not attached to any declaration.</p>",
+  "severity": "MINOR"
+}

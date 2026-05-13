@@ -1,0 +1,5 @@
+{
+  "name": "Static Over Final Class",
+  "description": "<p>Prefer static over final class declarations.</p>",
+  "severity": "MINOR"
+}

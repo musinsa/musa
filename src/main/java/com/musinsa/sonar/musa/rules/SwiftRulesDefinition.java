@@ -23,7 +23,15 @@ public class SwiftRulesDefinition implements RulesDefinition {
         "cyclomatic_complexity", "file_length", "function_body_length",
         "line_length", "nesting", "type_body_length",
         "trailing_whitespace", "empty_enum_arguments",
-        "unused_closure_parameter", "void_return"
+        "unused_closure_parameter", "void_return",
+        "vertical_whitespace", "trailing_comma", "identifier_name",
+        "type_name", "todo", "function_parameter_count",
+        "large_tuple", "trailing_newline",
+        "superfluous_disable_command", "orphaned_doc_comment",
+        "static_over_final_class", "redundant_void_return",
+        "unneeded_synthesized_initializer", "return_arrow_whitespace",
+        "unused_optional_binding", "optional_data_string_conversion",
+        "class_delegate_protocol", "blanket_disable_command"
     );
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -46,6 +54,24 @@ public class SwiftRulesDefinition implements RulesDefinition {
         defineRuleFromResource(repository, "empty_enum_arguments", RuleType.CODE_SMELL);
         defineRuleFromResource(repository, "unused_closure_parameter", RuleType.CODE_SMELL);
         defineRuleFromResource(repository, "void_return", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "vertical_whitespace", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "trailing_comma", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "identifier_name", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "type_name", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "todo", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "function_parameter_count", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "large_tuple", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "trailing_newline", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "superfluous_disable_command", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "orphaned_doc_comment", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "static_over_final_class", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "redundant_void_return", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "unneeded_synthesized_initializer", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "return_arrow_whitespace", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "unused_optional_binding", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "optional_data_string_conversion", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "class_delegate_protocol", RuleType.CODE_SMELL);
+        defineRuleFromResource(repository, "blanket_disable_command", RuleType.CODE_SMELL);
 
         repository.done();
     }

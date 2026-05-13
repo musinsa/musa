@@ -1,0 +1,5 @@
+{
+  "name": "Return Arrow Whitespace",
+  "description": "<p>Return arrow and return type should be separated by a single space or newline.</p>",
+  "severity": "MINOR"
+}

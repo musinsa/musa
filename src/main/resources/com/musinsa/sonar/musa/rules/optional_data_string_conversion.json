@@ -1,0 +1,5 @@
+{
+  "name": "Optional Data String Conversion",
+  "description": "<p>Prefer using the non-optional String(data:encoding:) to decode a string from Data.</p>",
+  "severity": "MINOR"
+}
