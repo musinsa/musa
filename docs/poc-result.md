@@ -16,7 +16,7 @@
 | 양 팀 레포 → SonarQube 대시보드 적재 | ✅ 달성 | ios-29cm, app-store-ios 모두 정상 |
 | SwiftLint 룰 Issue 표출 | ✅ 달성 | ios-29cm: 16,898개 / app-store-ios: 5,388개 |
 | 무신사 컨벤션 룰 Issue 표출 | ✅ 달성 | ios-29cm: 9,303개 / app-store-ios: 5,382개 |
-| xccov 커버리지 적재 | ⚠️ 부분 달성 | 센서 코드 구현 완료, runner 환경(Linux)에서 xcodebuild 실행 불가 |
+| xccov 커버리지 적재 | ⚠️ 부분 달성 | 센서 코드 구현 완료, GitHub Actions runner가 Linux 기반으로 xcodebuild 미지원 (macOS runner 확보 필요) |
 | LLM 코멘트 첨부 | ➖ 범위 제외 | PoC 핵심 기능 검증 후 추후 구현 |
 
 ---
@@ -56,8 +56,8 @@
 
 ## SonarQube 대시보드
 
-- **ios-29cm**: https://sonarqube-mobile.mng.musinsa.io/project/issues?id=ios-29cm&branch=feature%2FMCMP-3845-musa-plugin-poc&issueStatuses=OPEN%2CCONFIRMED
-- **app-store-ios**: https://sonarqube-mobile.mng.musinsa.io/project/issues?id=app-store-ios&branch=feature%2FMCMP-3845-musa-plugin-poc&issueStatuses=OPEN%2CCONFIRMED
+- **ios-29cm**: https://sonarqube-mobile.mng.musinsa.io/project/issues?branch=feature%2FMCMP-3845-musa-plugin-poc&id=ios-29cm&issueStatuses=OPEN%2CCONFIRMED
+- **app-store-ios**: https://sonarqube-mobile.mng.musinsa.io/project/issues?branch=feature%2FMCMP-3845-musa-plugin-poc&id=app-store-ios&issueStatuses=OPEN%2CCONFIRMED
 
 ---
 
